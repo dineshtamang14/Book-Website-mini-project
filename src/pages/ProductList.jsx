@@ -60,7 +60,7 @@ const ProductList = () => {
       <FilterContainer>
         <Filter>
           <FilterText>Filter Books:</FilterText>
-          <Select name="types">
+          <Select name="types" onChange={handleFilters}>
             <Option disabled>
               Types
             </Option>
@@ -71,7 +71,7 @@ const ProductList = () => {
             <Option>Linux</Option>
             <Option>Hacking</Option>
           </Select>
-          <Select name="stages" onChange={handleFilters}>
+          <Select name="stages">
             <Option disabled>
               Stages
             </Option>
