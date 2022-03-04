@@ -5,7 +5,8 @@ export const sliderItems = [
       "isbn13": "9781484257241",
       "price": "$26.71",
       "image": "https://itbook.store/img/books/9781484257241.png",
-      "url": "https://itbook.store/files/9781617294136/chapter2.pdf"
+      "url": "https://itbook.store/files/9781617294136/chapter2.pdf",
+      "cat": "programming"
     },
     {
       "title": "Data Structures and Algorithms",
@@ -13,7 +14,8 @@ export const sliderItems = [
       "isbn13": "1001622115743",
       "price": "$0.00",
       "image": "https://itbook.store/img/books/1001622115743.png",
-      "url": "https://itbook.store/files/9781617294136/chapter2.pdf"
+      "url": "https://itbook.store/files/9781617294136/chapter2.pdf",
+      "cat": "Devops"
     },
     {
       "title": "Microsoft Dynamics 365 For Dummies",
@@ -21,7 +23,8 @@ export const sliderItems = [
       "isbn13": "9781119508861",
       "price": "$19.39",
       "image": "https://itbook.store/img/books/9781119508861.png",
-      "url": "https://itbook.store/files/9781617294136/chapter2.pdf"
+      "url": "https://itbook.store/files/9781617294136/chapter2.pdf",
+      "cat": "Linux"
     }
   ];
 
@@ -32,7 +35,8 @@ export const sliderItems = [
       "isbn13": "9781098104436",
       "price": "$43.89",
       "image": "https://itbook.store/img/books/9781098104436.png",
-      "url": "https://itbook.store/files/9781617294136/chapter2.pdf"
+      "url": "https://itbook.store/files/9781617294136/chapter2.pdf",
+      "cat": "programming"
     },
     {
       "title": "PHP: The Right Way",
@@ -40,7 +44,8 @@ export const sliderItems = [
       "isbn13": "1001635859424",
       "price": "$0.00",
       "image": "https://itbook.store/img/books/1001635859424.png",
-      "url": "https://itbook.store/files/9781617294136/chapter2.pdf"
+      "url": "https://itbook.store/files/9781617294136/chapter2.pdf",
+      "cat": "Devops"
     },
         {
       "title": "Beginning Python",
@@ -48,7 +53,8 @@ export const sliderItems = [
       "isbn13": "9780470414637",
       "price": "$7.99",
       "image": "https://itbook.store/img/books/9780470414637.png",
-      "url": "https://itbook.store/files/9781617294136/chapter2.pdf"
+      "url": "https://itbook.store/files/9781617294136/chapter2.pdf",
+      "cat": "Linux"
     },
     {
       "title": "Python Cookbook, 2nd Edition",
@@ -56,7 +62,8 @@ export const sliderItems = [
       "isbn13": "9780596007973",
       "price": "$7.17",
       "image": "https://itbook.store/img/books/9780596007973.png",
-      "url": "https://itbook.store/files/9781617294136/chapter2.pdf"
+      "url": "https://itbook.store/files/9781617294136/chapter2.pdf",
+      "cat": "Linux"
     },
   ];
 
