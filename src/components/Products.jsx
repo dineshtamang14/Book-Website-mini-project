@@ -12,32 +12,40 @@ const Container = styled.div`
 `;
 
 const Products = ({ cat, filters, sort }) => {
+  
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get(cat ? `https://dinesh-book-api.herokuapp.com/products?category=${cat}` : "https://dinesh-book-api.herokuapp.com/products");
+        const res = await axios.get(
+          cat
+            ? `https://dinesh-book-api.herokuapp.com/products?category=${cat}`
+            : "https://dinesh-book-api.herokuapp.com/products"
+        );
         setProducts(res.data);
-        console.log(res.data);
-      } catch (error) {
-        console.log(error);
+      } catch (err) {
+        console.log(err);
       }
     };
     getProducts();
   }, [cat]);
 
   useEffect(() => {
-    cat &&
-      setFilteredProducts(
-        products.filter((item) =>
-          Object.entries(filters).every(([key, value]) =>
-            item[key].includes(value)
-          )
-        )
-      );
-  }, [products, cat, filters]);
+    const getProducts = async () => {
+      try {
+        const res = await axios.get(
+          filters &&
+             `https://dinesh-book-api.herokuapp.com/products?search=${filters}`
+        );
+        setFilteredProducts(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getProducts();
+  }, [filters]);
 
   useEffect(() => {
     if (sort === "newest") {

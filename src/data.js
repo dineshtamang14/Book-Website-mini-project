@@ -15,7 +15,7 @@ export const sliderItems = [
       "price": "$0.00",
       "image": "https://itbook.store/img/books/1001622115743.png",
       "url": "https://itbook.store/files/9781617294136/chapter2.pdf",
-      "cat": "Devops"
+      "cat": "devops"
     },
     {
       "title": "Microsoft Dynamics 365 For Dummies",
@@ -24,7 +24,7 @@ export const sliderItems = [
       "price": "$19.39",
       "image": "https://itbook.store/img/books/9781119508861.png",
       "url": "https://itbook.store/files/9781617294136/chapter2.pdf",
-      "cat": "Linux"
+      "cat": "linux"
     }
   ];
 
@@ -45,7 +45,7 @@ export const sliderItems = [
       "price": "$0.00",
       "image": "https://itbook.store/img/books/1001635859424.png",
       "url": "https://itbook.store/files/9781617294136/chapter2.pdf",
-      "cat": "Devops"
+      "cat": "devops"
     },
         {
       "title": "Beginning Python",
@@ -54,7 +54,7 @@ export const sliderItems = [
       "price": "$7.99",
       "image": "https://itbook.store/img/books/9780470414637.png",
       "url": "https://itbook.store/files/9781617294136/chapter2.pdf",
-      "cat": "Linux"
+      "cat": "linux"
     },
     {
       "title": "Python Cookbook, 2nd Edition",
@@ -63,7 +63,7 @@ export const sliderItems = [
       "price": "$7.17",
       "image": "https://itbook.store/img/books/9780596007973.png",
       "url": "https://itbook.store/files/9781617294136/chapter2.pdf",
-      "cat": "Linux"
+      "cat": "linux"
     },
   ];
 

@@ -48,15 +48,15 @@ const ProductList = () => {
     const value = e.target.value;
     setFilters({
       [e.target.name]: value,
-    })
-  }
+    });
+  };
 
 
   return (
     <Container>
       <Navbar />
       <Announcement />
-      <Title>Books</Title>
+      <Title>{cat}</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Books:</FilterText>
@@ -75,11 +75,10 @@ const ProductList = () => {
             <Option disabled>
               Stages
             </Option>
-            <Option>Beginner</Option>
-            <Option>Mid-Beginner</Option>
-            <Option>InterMediate</Option>
-            <Option>Advance</Option>
-            <Option>Expret</Option>
+            <Option>beginner</Option>
+            <Option>intermediate</Option>
+            <Option>avance</Option>
+            <Option>expret</Option>
           </Select>
         </Filter>
         <Filter>
