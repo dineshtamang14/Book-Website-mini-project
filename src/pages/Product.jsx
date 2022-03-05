@@ -126,7 +126,6 @@ const Product = () => {
     const getProduct = async () => {
       try {
         const res = await publicRequest.get("/products/find/"+id);
-        console.log(res.data);
         setProducts(res.data);
       } catch (error) {
         console.log(error);
@@ -148,7 +147,7 @@ const Product = () => {
           <Desc>
             {product.subtitle}
           </Desc>
-          <Price>₹{product.price}</Price>
+          <Price>₹ {product.price}</Price>
           <FilterContainer>
             {/* <Filter>
               <FilterTitle>Themes</FilterTitle>
