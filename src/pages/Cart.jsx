@@ -8,9 +8,10 @@ import { useSelector } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
 import { useState, useEffect } from "react";
 import { userRequest } from "../requestMethods";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-const KEY = "pk_test_51JiB7XSJjBncn0lk8wmSg4rJSBKKLk2FVidOk7gcKLN8Ysv1ioC7KTwklylcUWjMPmVpWOoV3zu8Sm89kIIGrxvx00GrVbESUd";
+const KEY =
+  "pk_test_51JiB7XSJjBncn0lk8wmSg4rJSBKKLk2FVidOk7gcKLN8Ysv1ioC7KTwklylcUWjMPmVpWOoV3zu8Sm89kIIGrxvx00GrVbESUd";
 
 const Container = styled.div``;
 
@@ -54,7 +55,6 @@ const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
   ${mobile({ flexDirection: "column" })}
-
 `;
 
 const Info = styled.div`
@@ -169,15 +169,17 @@ const Cart = () => {
           tokenId: stripeToken.id,
           amount: cart.total * 100,
         });
-        
-        navigate("/success", { 
+
+        navigate("/success", {
           stripeData: res.data,
-          products: cart, });
-         });
-      } catch(error) {console.log(error);}
+          products: cart,
+        });
+      } catch (error) {
+        console.log(error);
+      }
     };
-    stripeToken && cart.total >=1 && makeRequest();
-  }, [stripeToken,cart.total, cart, navigate]);
+    stripeToken && cart.total >= 1 && makeRequest();
+  }, [stripeToken, cart.total, cart, navigate]);
 
   return (
     <Container>
@@ -195,7 +197,7 @@ const Cart = () => {
         </Top>
         <Bottom>
           <Info>
-          {cart.products.map((product) => (
+            {cart.products.map((product) => (
               <Product>
                 <ProductDetail>
                   <Image src={product.image} />
@@ -206,7 +208,8 @@ const Cart = () => {
                     <ProductId>
                       <b>ID:</b> {product._id}
                     </ProductId>
-                    <ProductSize><b>ISBN</b>: {product.isbn13}
+                    <ProductSize>
+                      <b>ISBN</b>: {product.isbn13}
                     </ProductSize>
                     <ProductSize>
                       <b>Rating:</b> {product.rating}
@@ -220,7 +223,7 @@ const Cart = () => {
                     <Remove />
                   </ProductAmountContainer>
                   <ProductPrice>
-                  ₹ {product.price * product.quantity}
+                    ₹ {product.price * product.quantity}
                   </ProductPrice>
                 </PriceDetail>
               </Product>
