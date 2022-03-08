@@ -18,7 +18,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-          <Route exact path="/" element={<Home/>} />
+          <Route exact path="/" element={user ? <Home/> : <Navigate replace to="/login" /> } />
           <Route exact path="/products/:category" element={<ProductList/>} />
           <Route exact path="/product/:id" element={<Product/>} />
           <Route exact path="/cart" element={<Cart/>} />
