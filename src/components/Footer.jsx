@@ -87,7 +87,7 @@ const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo>Book Store.</Logo>
+        <Logo id="about">Book Store.</Logo>
         <Desc>
           There are many variations of passages of Lorem Ipsum available, but
           the majority have suffered alteration in some form, by injected
@@ -124,7 +124,7 @@ const Footer = () => {
         </List>
       </Center>
       <Right>
-        <Title>Contact</Title>
+        <Title id="contact">Contact</Title>
         <ContactItem>
           <Room style={{marginRight:"10px"}}/> 303, Green Lawns Badlapur West
         </ContactItem>

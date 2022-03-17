@@ -69,8 +69,36 @@ const MenuItem = styled.div`
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
+const Admin = styled.a`
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 25px;
+  ${mobile({ fontSize: "12px", marginLeft: "10px" })}
+  text-decoration: none;
+  font: bold;
+  color: black;
+  font-size: 1rem;
+`;
+
+const Logout = styled.button`
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 25px;
+  ${mobile({ fontSize: "12px", marginLeft: "10px" })}
+  text-decoration: none;
+  font: bold;
+  color: black;
+  font-size: 1rem;
+  border: none;
+  background: none;
+`;
+
 const Navbar = () => {
   const quantity = useSelector(state=>state.cart.quantity);
+  const logout = () => {
+    localStorage.removeItem("persist:root");
+    window.location.href = '/';
+  };
 
   return (
     <Container>
@@ -82,13 +110,20 @@ const Navbar = () => {
             <Search style={{ color: "gray", fontSize: 16 }} />
           </SearchContainer>
         </Left>
+        <Link to="/" style={{textDecoration: "none", color: "black"}}>
         <Center>
           <Logo>Book Store</Logo>
         </Center>
+        </Link>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
-          <Link to="/cart">
+          <Admin href="#about">About us</Admin>
+          <Admin href="#contact">Contact us</Admin>
+          <Admin target="_blank" href="https://book-website-admin.netlify.app" style={{textDecoration: "none"}}>
+          Admin Login
+          </Admin>
+          <Logout onClick={logout}>Log out</Logout>
+          
+          <Link to="/cart" style={{color: "black"}}>
           <MenuItem>
             <Badge badgeContent={quantity} color="primary">
               <ShoppingCartOutlined />

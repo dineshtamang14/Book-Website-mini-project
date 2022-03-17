@@ -45,7 +45,7 @@ export const sliderItems = [
       "price": "$0.00",
       "image": "https://itbook.store/img/books/1001635859424.png",
       "url": "https://itbook.store/files/9781617294136/chapter2.pdf",
-      "cat": "devops"
+      "cat": "linux"
     },
         {
       "title": "Beginning Python",
@@ -54,7 +54,7 @@ export const sliderItems = [
       "price": "$7.99",
       "image": "https://itbook.store/img/books/9780470414637.png",
       "url": "https://itbook.store/files/9781617294136/chapter2.pdf",
-      "cat": "linux"
+      "cat": "dsa"
     },
     {
       "title": "Python Cookbook, 2nd Edition",
@@ -63,7 +63,7 @@ export const sliderItems = [
       "price": "$7.17",
       "image": "https://itbook.store/img/books/9780596007973.png",
       "url": "https://itbook.store/files/9781617294136/chapter2.pdf",
-      "cat": "linux"
+      "cat": "devops"
     },
   ];
 

@@ -248,7 +248,8 @@ const Cart = () => {
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>₹ {cart.total}</SummaryItemPrice>
             </SummaryItem>
-            <StripeCheckout
+            {cart.total > 0 && (
+              <StripeCheckout
               name="Book Website"
               image="https://avatars.githubusercontent.com/u/1486366?v=4"
               billingAddress
@@ -258,8 +259,9 @@ const Cart = () => {
               token={onToken}
               stripeKey={KEY}
             >
-              <Button>CHECKOUT NOW</Button>
+              <Button style={{cursor: "pointer"}}>CHECKOUT NOW</Button>
             </StripeCheckout>
+            )}
           </Summary>
         </Bottom>
       </Wrapper>
