@@ -4,6 +4,7 @@ import { useState } from "react";
 import { login } from "../redux/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Container = styled.div`
   width: 100vw;
@@ -76,6 +77,7 @@ const Login = () => {
   const { isFetching, error } = useSelector((state) => state.user);
 
   const handleClick = (e) => {
+    toast("Login successfully", { type: "success" });
     e.preventDefault();
     login(dispatch, { username, password });
   };
