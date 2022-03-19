@@ -77,8 +77,10 @@ const Login = () => {
   const { isFetching, error } = useSelector((state) => state.user);
 
   const handleClick = (e) => {
-    toast("Login successfully", { type: "success" });
     e.preventDefault();
+    if(!error){
+      toast("Login successfully", { type: "success" });
+    }
     login(dispatch, { username, password });
   };
 
@@ -99,9 +101,10 @@ const Login = () => {
           <Button onClick={handleClick} disabled={isFetching}>
             LOGIN
           </Button>
-          {error && <Error>Something went wrong...</Error>}
+          {error && <Error>Wrong, Credentials...</Error>}
+          {error && toast("Wrong, Credentials....!", { type: "success" })}
           <LinkTo>DO NOT YOU REMEMBER THE PASSWORD?</LinkTo>
-          <Link to="/register">
+          <Link to="/register" style={{textDecoration: "none", color: "black"}}>
             <LinkTo>CREATE A NEW ACCOUNT</LinkTo>
           </Link>
         </Form>
