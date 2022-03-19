@@ -102,7 +102,6 @@ const Login = () => {
             LOGIN
           </Button>
           {error && <Error>Wrong, Credentials...</Error>}
-          {error && toast("Wrong, Credentials....!", { type: "success" })}
           <LinkTo>DO NOT YOU REMEMBER THE PASSWORD?</LinkTo>
           <Link to="/register" style={{textDecoration: "none", color: "black"}}>
             <LinkTo>CREATE A NEW ACCOUNT</LinkTo>
