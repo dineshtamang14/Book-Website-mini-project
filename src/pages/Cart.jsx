@@ -4,6 +4,7 @@ import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
+import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
 import { useState, useEffect } from "react";
@@ -170,11 +171,14 @@ const Cart = () => {
           amount: cart.total * 100,
         });
 
-        navigate("/success", {
-          stripeData: res.data,
-          products: cart,
+        navigate("/success", { 
+          state: {
+            stripeData: res.data,
+            products: cart,
+          }
         });
       } catch (error) {
+        toast("Wrong, Card Credentials...!", { type: "fail" });
         console.log(error);
       }
     };
