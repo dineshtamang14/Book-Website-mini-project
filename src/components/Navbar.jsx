@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import LogoutIcon from '@mui/icons-material/Logout'
 
 const Container = styled.div`
   height: 60px;
@@ -96,6 +98,7 @@ const Logout = styled.button`
 const Navbar = () => {
   const quantity = useSelector(state=>state.cart.quantity);
   const logout = () => {
+    toast("Logout successfull", { type: "success" });
     localStorage.removeItem("persist:root");
     window.location.href = '/';
   };
@@ -121,7 +124,7 @@ const Navbar = () => {
           <Admin target="_blank" href="https://book-website-admin.netlify.app" style={{textDecoration: "none"}}>
           Admin Login
           </Admin>
-          <Logout onClick={logout}>Log out</Logout>
+          <Logout onClick={logout}><LogoutIcon /></Logout>
           
           <Link to="/cart" style={{color: "black"}}>
           <MenuItem>

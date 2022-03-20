@@ -156,12 +156,12 @@ const Product = () => {
       <Announcement />
       <Wrapper>
         <ImgContainer>
-          <Image src={product.image} />
+          <Image src={product.img} />
         </ImgContainer>
         <InfoContainer>
           <Title>{product.title}</Title>
           <Desc>
-            {product.subtitle}
+            {product.desc}
           </Desc>
           <Price>₹ {product.price}</Price>
           <FilterContainer>

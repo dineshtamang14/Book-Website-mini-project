@@ -98,11 +98,11 @@ const Slider = () => {
         {sliderItems.map((item) => (
           <Slide bg="f5fafd" key={item.title}>
             <ImgContainer>
-              <Image src={item.image} />
+              <Image src={item.img} />
             </ImgContainer>
             <InfoContainer>
               <Title>{item.title}</Title>
-              <Desc>{item.subtitle}</Desc>
+              <Desc>{item.desc}</Desc>
               <Button>SHOW NOW</Button>
             </InfoContainer>
           </Slide>
