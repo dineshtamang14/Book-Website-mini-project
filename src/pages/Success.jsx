@@ -13,21 +13,17 @@ const Success = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
   const [orderId, setOrderId] = useState(null);
 
-//   const emailData = {
-//     from: "dineshshah960@gmail.com",
-//     to: currentUser.email,
-//     subject: `Purchased Books`,
-//     html: `
-//         <h1>Hi, ${currentUser.name}</h1>
-//         <p>Sir, you can download books pdf from this  urls given below: </p>
-//         <hr />
-//         ${cart.products.map((item) => {
-//           <ol type="1">
-//             <li>${item.pdf}</li>
-//           </ol>
-//         })}
-//     `
-// };
+  const sendEmail = async () => {
+    try {
+      await userRequest.post("/orders/send_mail", {
+        email: currentUser.email,
+        name: currentUser.name,
+        url: cart.products
+      })
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   useEffect(() => {
     const createOrder = async () => {
@@ -51,6 +47,7 @@ const Success = () => {
   }, [cart, data, currentUser]);
 
   const handleClick = () => {
+    sendEmail();
     toast("Ordered successfully...!", { type: "success" });
     navigate("/");
   }
