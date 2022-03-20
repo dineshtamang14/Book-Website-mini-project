@@ -13,6 +13,22 @@ const Success = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
   const [orderId, setOrderId] = useState(null);
 
+//   const emailData = {
+//     from: "dineshshah960@gmail.com",
+//     to: currentUser.email,
+//     subject: `Purchased Books`,
+//     html: `
+//         <h1>Hi, ${currentUser.name}</h1>
+//         <p>Sir, you can download books pdf from this  urls given below: </p>
+//         <hr />
+//         ${cart.products.map((item) => {
+//           <ol type="1">
+//             <li>${item.pdf}</li>
+//           </ol>
+//         })}
+//     `
+// };
+
   useEffect(() => {
     const createOrder = async () => {
       try {
