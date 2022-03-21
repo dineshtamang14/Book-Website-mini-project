@@ -4,6 +4,8 @@ import Product from "./pages/Product";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
+import Forgot from "./pages/Forgot";
+import ResetPassword from "./pages/ResetPassword";
 import {
   BrowserRouter as Router,
   Route,
@@ -24,7 +26,9 @@ const App = () => {
           <Route exact path="/cart" element={<Cart/>} />
           <Route exact path="/success" element={<Success/>} />
           <Route exact path="/login" element={user ? <Navigate replace to="/" /> : <Login/>} />
+          <Route exact path="/forgot" element={<Forgot />} />
           <Route exact path="/register" element={user ? <Navigate replace to="/" /> : <Register/>} />
+          <Route exact path="/reset/:id" element={<ResetPassword />} />
       </Routes>
     </Router>
   );

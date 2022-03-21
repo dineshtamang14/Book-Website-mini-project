@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import {mobile} from "../responsive";
 import { useState } from "react";
-import { login } from "../redux/apiCalls";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Container = styled.div`
@@ -52,6 +49,7 @@ const Button = styled.button`
   background-color: teal;
   color: white;
   cursor: pointer;
+  margin-top: 10px;
   margin-bottom: 10px;
   &:disabled {
     color: green;
@@ -59,59 +57,40 @@ const Button = styled.button`
   }
 `;
 
-const LinkTo = styled.a`
-  margin: 5px 0px;
-  font-size: 12px;
-  text-decoration: underline;
-  cursor: pointer;
-`;
-
-const Error = styled.span`
-  color: red;
-`;
-
-const Login = () => {
-  const [username, setUsername] = useState("");
+const ResetPassword = () => {
+  const [changePassword, setChangePassword] = useState("");
   const [password, setPassword] = useState("");
-  const dispatch = useDispatch();
-  const { isFetching, error } = useSelector((state) => state.user);
 
   const handleClick = (e) => {
     e.preventDefault();
-    if(!error){
-      toast("Login successfully", { type: "success" });
+    if(password === changePassword){
+      toast("change password successfully", { type: "success" });
+    } else {
+        toast("please check your both password match or not", { type: "success" });
     }
-    login(dispatch, { username, password });
   };
 
   return (
     <Container>
       <Wrapper>
-        <Title>SIGN IN</Title>
+        <Title>Change Password</Title>
         <Form>
         <Input
-            placeholder="username"
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <Input
             placeholder="password"
-            type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button onClick={handleClick} disabled={isFetching}>
-            LOGIN
+          <Input
+            placeholder="confirm password"
+            type="password"
+            onChange={(e) => setChangePassword(e.target.value)}
+          />
+          <Button onClick={handleClick}>
+            change
           </Button>
-          {error && <Error>Wrong, Credentials...</Error>}
-          <Link to="/forgot" style={{textDecoration: "none", color: "black"}}>
-            <LinkTo>DO NOT YOU REMEMBER THE PASSWORD?</LinkTo>
-          </Link>
-          <Link to="/register" style={{textDecoration: "none", color: "black"}}>
-            <LinkTo>CREATE A NEW ACCOUNT</LinkTo>
-          </Link>
         </Form>
       </Wrapper>
     </Container>
   );
 };
 
-export default Login;
+export default ResetPassword;
