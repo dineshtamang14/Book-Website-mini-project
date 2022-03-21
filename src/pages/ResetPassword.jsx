@@ -2,6 +2,9 @@ import styled from "styled-components";
 import {mobile} from "../responsive";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { useLocation } from "react-router-dom";
+import { publicRequest } from "../requestMethods";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -58,13 +61,24 @@ const Button = styled.button`
 `;
 
 const ResetPassword = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
   const [changePassword, setChangePassword] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleChange = async () => {
+    await publicRequest.patch("/users/"+id, {
+      id:id
+    })
+  }
 
   const handleClick = (e) => {
     e.preventDefault();
     if(password === changePassword){
+      handleChange();
       toast("change password successfully", { type: "success" });
+      navigate("/");
     } else {
         toast("please check your both password match or not", { type: "success" });
     }
