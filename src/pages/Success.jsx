@@ -4,9 +4,12 @@ import { useLocation } from "react-router";
 import { userRequest, publicRequest } from "../requestMethods";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { deleteProduct } from "../redux/cartRedux";
+import { useDispatch } from "react-redux";
 
 const Success = () => {
   const location = useLocation();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const data = location.state.stripeData;
   const cart = location.state.products;
@@ -30,10 +33,10 @@ const Success = () => {
       try {
         const res = await userRequest.post("/orders", {
           userId: currentUser._id,
-          products: cart.products?.map((item) => ({
+          products: cart.products.length > 1 ? cart.products?.map((item) => ({
             productId: item._id,
             quantity: item._quantity,
-          })),
+          })) : cart.products,
           amount: cart.total,
           address: data.billing_details.address,
         });
@@ -48,6 +51,7 @@ const Success = () => {
 
   const handleClick = () => {
     sendEmail();
+    dispatch(deleteProduct());
     toast("Ordered successfully...!", { type: "success" });
     navigate("/");
   }
