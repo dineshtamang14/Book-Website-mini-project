@@ -69,7 +69,8 @@ const ResetPassword = () => {
 
   const handleChange = async () => {
     await publicRequest.patch("/users/"+id, {
-      id:id
+      id:id,
+      password: password
     })
   }
 
@@ -90,6 +91,7 @@ const ResetPassword = () => {
         <Title>Change Password</Title>
         <Form>
         <Input
+            type="password"
             placeholder="password"
             onChange={(e) => setPassword(e.target.value)}
           />
