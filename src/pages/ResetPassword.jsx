@@ -77,7 +77,7 @@ const ResetPassword = () => {
     e.preventDefault();
     if(password === changePassword){
       handleChange();
-      toast("change password successfully", { type: "success" });
+      toast("changed password successfully", { type: "success" });
       navigate("/");
     } else {
         toast("please check your both password match or not", { type: "success" });
