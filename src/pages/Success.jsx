@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
-import { userRequest } from "../requestMethods";
+import { userRequest, publicRequest } from "../requestMethods";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -15,7 +15,7 @@ const Success = () => {
 
   const sendEmail = async () => {
     try {
-      await userRequest.post("/orders/send_mail", {
+      await publicRequest.post("/orders/send_mail", {
         email: currentUser.email,
         name: currentUser.name,
         url: cart.products
