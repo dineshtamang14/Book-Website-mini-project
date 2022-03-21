@@ -69,19 +69,22 @@ const ResetPassword = () => {
 
   const handleChange = async () => {
     await publicRequest.patch("/users/"+id, {
-      id:id,
       password: password
     })
   }
 
   const handleClick = (e) => {
     e.preventDefault();
-    if(password === changePassword){
-      handleChange();
-      toast("changed password successfully", { type: "success" });
-      navigate("/");
+    if(password && changePassword){
+      if(password === changePassword){
+        handleChange();
+        toast("changed password successfully", { type: "success" });
+        navigate("/");
+      } else {
+          toast("please check your both password match or not", { type: "success" });
+      }
     } else {
-        toast("please check your both password match or not", { type: "success" });
+      toast("please enter password", { type: "success" });
     }
   };
 
