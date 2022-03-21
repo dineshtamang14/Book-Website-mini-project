@@ -121,7 +121,7 @@ const Navbar = () => {
         <Right>
           <Admin href="#about">About us</Admin>
           <Admin href="#contact">Contact us</Admin>
-          <Admin target="_blank" href="https://book-website-admin.netlify.app" style={{textDecoration: "none"}}>
+          <Admin target="_blank" href="https://book-website-admin.herokuapp.com" style={{textDecoration: "none"}}>
           Admin Login
           </Admin>
           <Logout onClick={logout}><LogoutIcon /></Logout>
