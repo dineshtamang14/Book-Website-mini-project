@@ -67,7 +67,7 @@ const Right = styled.div`
 const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
-  margin-left: 25px;
+  margin-left: 10px;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
@@ -83,9 +83,9 @@ const Admin = styled.a`
 `;
 
 const Logout = styled.button`
-  font-size: 14px;
+  font-size: 10px;
   cursor: pointer;
-  margin-left: 25px;
+  margin-left: 10px;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
   text-decoration: none;
   font: bold;
@@ -95,7 +95,16 @@ const Logout = styled.button`
   background: none;
 `;
 
+const Avatar = styled.img`
+    margin-left: 18px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+`;
+
 const Navbar = () => {
+  const user = useSelector((state) => state.user);
   const quantity = useSelector(state=>state.cart.quantity);
   const logout = () => {
     toast("Logout successfull", { type: "success" });
@@ -133,6 +142,11 @@ const Navbar = () => {
             </Badge>
           </MenuItem>
           </Link>
+          <Avatar
+            src={user.currentUser.img}
+            alt="avatar"
+            className="topAvatar"
+          />
         </Right>
       </Wrapper>
     </Container>
