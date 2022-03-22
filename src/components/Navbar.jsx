@@ -3,6 +3,7 @@ import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import { logout } from "../redux/userRedux";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -106,9 +107,9 @@ const Avatar = styled.img`
 const Navbar = () => {
   const user = useSelector((state) => state.user);
   const quantity = useSelector(state=>state.cart.quantity);
-  const logout = () => {
+  const logoutUser = () => {
     toast("Logout successfull", { type: "success" });
-    localStorage.removeItem("persist:root");
+    logout();
     window.location.href = '/';
   };
 
@@ -133,7 +134,7 @@ const Navbar = () => {
           <Admin target="_blank" href="https://book-website-admin.herokuapp.com" style={{textDecoration: "none"}}>
           Admin Login
           </Admin>
-          <Logout onClick={logout}><LogoutIcon /></Logout>
+          <Logout onClick={logoutUser}><LogoutIcon /></Logout>
           
           <Link to="/cart" style={{color: "black"}}>
           <MenuItem>
