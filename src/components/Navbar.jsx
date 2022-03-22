@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 import { logout } from "../redux/userRedux";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import LogoutIcon from '@mui/icons-material/Logout'
@@ -105,11 +105,12 @@ const Avatar = styled.img`
 `;
 
 const Navbar = () => {
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const quantity = useSelector(state=>state.cart.quantity);
   const logoutUser = () => {
     toast("Logout successfull", { type: "success" });
-    logout();
+    dispatch(logout());
     window.location.href = '/';
   };
 
