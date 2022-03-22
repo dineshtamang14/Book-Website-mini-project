@@ -33,10 +33,10 @@ const Success = () => {
       try {
         const res = await userRequest.post("/orders", {
           userId: currentUser._id,
-          products: cart.products.length > 1 ? cart.products.map((item) => ({
+          products: cart.products?.map((item) => ({
             productId: item._id,
             quantity: item._quantity,
-          })) : cart.products,
+          })),
           amount: cart.total,
           address: data.billing_details.address,
         });
