@@ -155,31 +155,27 @@ const Register = () => {
         <Form>
           <Input placeholder="Full Name"
             onChange={(e) => setName(e.target.value)}
-            required
           />
           <Input
             placeholder="username"
             onChange={(e) => setUsername(e.target.value)}
-            required
           />
           <Input placeholder="email"
+            type="email"
             onChange={(e) => setEmail(e.target.value)}
-            required
           />
           <Input
             placeholder="password"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
-            required
           />
           <Input type="file" placeholder="upload a profile"
             onChange={(e) => setFile(e.target.files[0])}
-            required
           />
           <Input
             placeholder="Mobile Number"
+            type="number"
             onChange={(e) => setNumber(e.target.value)}
-            required
           />
           <Input placeholder="Address" 
             onChange={(e) => setAddress(e.target.value)}

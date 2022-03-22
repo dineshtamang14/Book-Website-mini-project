@@ -78,9 +78,13 @@ const Login = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    login(dispatch, { username, password });
-    if(!error){
-      toast("Login successfully", { type: "success" });
+    if(username && password){
+      login(dispatch, { username, password });
+      if(!error){
+        toast("Login successfully", { type: "success" });
+      }
+    } else {
+      toast("please enter all the fields", { type: "success" });
     }
   };
 
