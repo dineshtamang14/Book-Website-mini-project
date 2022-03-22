@@ -98,7 +98,9 @@ const Register = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    const fileName = new Date().getTime() + file.name;
+
+    if(name && email && username && password && file && number){
+      const fileName = new Date().getTime() + file.name;
     const storage = getStorage(app);
     const storageRef = ref(storage, fileName);
     const uploadTask = uploadBytesResumable(storageRef, file);
@@ -137,6 +139,9 @@ const Register = () => {
         });
       }
     );
+    } else {
+      toast("Please fill all the required fields", { type: "success" });
+    }
   };
 
   if(img){
@@ -150,25 +155,31 @@ const Register = () => {
         <Form>
           <Input placeholder="Full Name"
             onChange={(e) => setName(e.target.value)}
+            required
           />
           <Input
             placeholder="username"
             onChange={(e) => setUsername(e.target.value)}
+            required
           />
           <Input placeholder="email"
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
           <Input
             placeholder="password"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
           <Input type="file" placeholder="upload a profile"
             onChange={(e) => setFile(e.target.files[0])}
+            required
           />
           <Input
             placeholder="Mobile Number"
             onChange={(e) => setNumber(e.target.value)}
+            required
           />
           <Input placeholder="Address" 
             onChange={(e) => setAddress(e.target.value)}

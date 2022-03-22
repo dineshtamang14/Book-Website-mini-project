@@ -78,10 +78,10 @@ const Login = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
+    login(dispatch, { username, password });
     if(!error){
       toast("Login successfully", { type: "success" });
     }
-    login(dispatch, { username, password });
   };
 
   return (
