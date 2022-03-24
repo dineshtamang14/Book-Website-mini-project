@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://zzum9jzdp2.execute-api.ap-south-1.amazonaws.com/dev
-";
+const BASE_URL = "https://zzum9jzdp2.execute-api.ap-south-1.amazonaws.com/dev";
 // const BASE_URL = "http://localhost:5000";
 // const TOKEN =
 //   JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser
